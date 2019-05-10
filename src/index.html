@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Linx</title>
+	<script type="text/javascript" src="js/vue.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">	
+</head>
+<body>
+	<main id="app">
+		<header class="container">
+			<div class="app-products">
+				<div :class="{disabled: fade}" @click="fade = !fade">
+					<div class="snow-header">
+						<div class="app-products-header">
+							<figure class="app-produtcs-header-title">
+								<img src="img/logo-nike.jpg" alt="Logo Nike">
+							</figure>
+							<div class="app-produtcs-header-title">
+								<p>Bottle</p>
+							</div>
+							<div class="app-produtcs-header-title">
+								<i class="fas fa-shopping-bag"></i>
+							</div>
+						</div>
+						<ul class="app-produtcs-header-slider">
+							<li v-for="(imagens, i) in images"><img v-bind:src="imagens.img" v-bind:alt="imagens.img" /></li>
+						</ul>
+						<div class="app-products-header-balls container">
+							<div class="ball-blue active-ball"></div>
+							<div class="ball-grey"></div>
+							<div class="ball-green"></div>
+						</div>
+						<div class="app-products-header-text">
+							<div class="app-products-header-title">
+								<p>{{marca}}</p>
+							</div>
+							<div class="app-products-header-price">
+								<p>{{value}}</p>
+							</div>
+							<div class="app-products-header-description">
+								<p>{{textheader}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="disabled fade-header" :class="{active: fade}" @click="fade = !fade">
+					<div>
+						<img src="img/bottle-blue.png" alt="">
+						<p>{{marca}}</p>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="container espaco">
+			<h3>Features</h3>
+			<div class="app-features" v-for="(feature, i) in features">
+                <div class="app-features-col">
+                    <p>{{feature.name}}</p>
+                </div>
+                <div class="app-features-col">
+                    <progress :value="feature.value" :max="feature.max">
+                </div>
+                <div class="app-features-col">
+                    <p>{{feature.value}}ml</p>
+                </div>
+            </div>
+		</section>
+		<article class="container espaco">
+			<h3>Description</h3>
+			<div class="app-description">
+				<ul>
+					<li>Leakproaf Putti Volve Spout to avald splotter and spill</li>
+					<li>BPA Free - Smoiler carbon footprint!</li>
+					<li>Translucent body to track your consumption throughout the day</li>
+				</ul>
+			</div>
+			<h3>Description</h3>
+			<div class="app-description">
+				<div class="app-description-text">
+					<p>When you´re carrying the Nike Hyperful water Bottle there will be no second guessind your athletic ability.<br />Contructed with an anti-leck value that helps to prevent spills and provides ecsy hydration while you´re on the move.</p>
+				</div>
+			</div>
+		</article>
+		<section class="container espaco">
+			<h3>Rating</h3>
+			<div class="app-rating">
+				<div class="app-rating-evaluation">
+					<i class="fas fa-star" v-for="(star, i) in rating"></i>
+				</div>
+				<div class="app-rating-evaluation">
+					<p>{{rating}}/5</p>
+				</div>
+			</div>
+		</section>
+		<footer class="container espaco">
+			<div class="app-footer">
+				<div class="app-footer-button"><i class="fas fa-chalkboard"></i>Chat</div>
+				<div class="app-footer-button"><i class="fas fa-cart-arrow-down"></i>Add to Card</div>
+			</div>
+		</footer>
+	</main>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

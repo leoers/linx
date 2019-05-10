@@ -1,0 +1,18 @@
+{
+	"name": "exercicios",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"src": "http-server ./src -c-1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"http-server": "^0.11.1",
+		"vue-carousel": "^0.18.0",
+		"vue-smooth-touch-slide": "^2.0.3",
+		"vue-tiny-slider": "^0.1.35"
+	}
+}
